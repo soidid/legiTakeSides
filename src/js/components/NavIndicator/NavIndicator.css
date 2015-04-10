@@ -1,0 +1,22 @@
+.NavIndicator {
+	background: rgba(255,255,255,0.9);
+	z-index: 200;
+	border-bottom: 1px solid rgb(220,220,220);
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	text-align: center;
+	
+
+}
+.NavIndicator-circle {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   border: 1px solid rgb(53,55,54);/*rgb(152, 39, 45);*/
+   display: inline-block;
+   margin: 2px;
+}
+.NavIndicator-circle.is-current {
+   background: rgb(53,55,54);/*rgb(152, 39, 45);*/
+}

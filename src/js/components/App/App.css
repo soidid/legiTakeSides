@@ -1,0 +1,33 @@
+.App {
+	width: 100%;
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+.App-content {
+	margin-top: 40px;
+}
+@media screen and (min-width: 600px){
+    .App {   
+	   
+	   padding: 10px 0;
+    }
+}
+.App-group {
+	display: inline-block;
+	padding: 4px 10px;
+	border: 1px solid rgb(200,200,200);
+	margin: 4px;
+	cursor: pointer;
+}
+.App-group:hover, .App-group.is-focus {
+	background: rgb(200,200,200);
+
+}
+.App-title {
+	font-size: 20px;
+	font-weight: 700;
+	margin-top: 40px;
+}
+
