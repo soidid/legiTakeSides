@@ -89,18 +89,34 @@ var App = React.createClass({
           legiData.map((value, key)=>{
               console.log(value.party+": ");// value.party 是中文
               console.log(value.position);
+              
+              /* --------- 立法院   --------- */
+              if(!stateTemp["立法院"]){
+                  stateTemp["立法院"] = {};
+              }
+              if(!stateTemp["立法院"][value.position]){
+                  stateTemp["立法院"][value.position] = 1;
+                  
+              }else{
+                  stateTemp["立法院"][value.position] += 1;
+              }
+
+              /* --------- 各 group -------- */
               if(!stateTemp[value.party]){
-                  stateTemp[value.party] = {}
+                  stateTemp[value.party] = {};
               }
               if(!stateTemp[value.party][value.position]){
                   stateTemp[value.party][value.position] = 1;
               }else{
                   stateTemp[value.party][value.position] += 1;
               }
+
           });
           console.log(stateTemp);
           // Clear default data
           data = [];
+          // 把資料整理成 group 
+          // 這裏需要 「全立法院的資料」
           for(var group_key in stateTemp){
               var stateItem = {};
               stateItem.group = group_key;
@@ -115,8 +131,8 @@ var App = React.createClass({
           }
 
           this.setState({
-            data: data,
-            legiData: legiData
+              data: data,
+              legiData: legiData
           });
 
       }else{
