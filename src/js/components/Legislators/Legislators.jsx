@@ -23,13 +23,17 @@ var Legislators = React.createClass({
         var imgURL = require("./images/avatar/"+item.name+".png");
         var partyClass = "Legislators-avatar is-"+item.party_eng;
         return (
+          <div className="Legislators-item">
           <div className={partyClass}
                key={key}>
-
             <img className="Legislators-avatarImg"
                  src={imgURL} />
             <div>{item.name}</div>
-
+          </div>
+          <div className="Legislators-hoverInfo">
+              <div>選區：{item.constituency}</div>
+              <div>範圍：{item.constituency_area} {item.constituency_detail}</div>
+          </div>
           </div>
         )
     });
@@ -45,13 +49,17 @@ var Legislators = React.createClass({
         var imgURL = require("./images/avatar/"+item.name+".png");
         var partyClass = "Legislators-avatar is-"+item.party_eng;
         return (
+          <div className="Legislators-item">
           <div className={partyClass}
                key={key}>
-
             <img className="Legislators-avatarImg"
                  src={imgURL} />
             <div>{item.name}</div>
-
+          </div>
+          <div className="Legislators-hoverInfo">
+              <div>選區：{item.constituency}</div>
+              <div>範圍：{item.constituency_area} {item.constituency_detail}</div>
+          </div>
           </div>
         )
     });
@@ -65,13 +73,19 @@ var Legislators = React.createClass({
 
         var imgURL = require("./images/avatar/"+item.name+".png");
         var partyClass = "Legislators-avatar is-"+item.party_eng;
+        //console.log(item);
         return (
+          <div className="Legislators-item">
           <div className={partyClass}
                key={key}>
             <img className="Legislators-avatarImg"
                  src={imgURL} />
             <div>{item.name}</div>
-            
+          </div>
+          <div className="Legislators-hoverInfo">
+              <div>選區：{item.constituency}</div>
+              <div>範圍：{item.constituency_area} {item.constituency_detail}</div>
+          </div>
           </div>
         )
     })

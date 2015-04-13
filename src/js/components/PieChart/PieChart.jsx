@@ -75,6 +75,18 @@ var PieChart = React.createClass({
      
   },
 
+  _innerArc() {
+    var radius      = Math.min(this.props.innerWidth, this.props.innerHeight) / 2;
+    var innerRadius = (Math.min(this.props.innerWidth, this.props.innerHeight) / 2) * 0.8;
+    var outerRadius = (Math.min(this.props.innerWidth, this.props.innerHeight) / 2) * 0.4;
+    var labelRadius = (Math.min(this.props.innerWidth, this.props.innerHeight) / 2) * 0.9;
+
+    return d3.svg.arc()
+             .innerRadius(innerRadius)
+             .outerRadius(outerRadius / 2);
+     
+  },
+
   _outerArc(){
     var radius      = Math.min(this.props.innerWidth, this.props.innerHeight) / 2;
     var innerRadius = (Math.min(this.props.innerWidth, this.props.innerHeight) / 2) * 0.8;
@@ -174,6 +186,7 @@ var PieChart = React.createClass({
     var pieStartData = this._pieStart(data);
 
     var _arc = this._arc;
+    var _innerArc = this._innerArc;
     var _outerArc = this._outerArc;
     var _color = this._color;
 
@@ -189,6 +202,8 @@ var PieChart = React.createClass({
         function midAngle(d){
           return d.startAngle + (d.endAngle - d.startAngle)/2;
         }
+
+        var textPos = _innerArc().centroid.call(null,e);
 
         var labelPos = _outerArc().centroid.call(null,e);
         //console.log(labelPos);
@@ -247,6 +262,14 @@ var PieChart = React.createClass({
                   stroke={"#666"}
                   fill={"none"}
                   points={[innerPoint, outerPoint, linePos]} />
+
+              <text dy=".35em"
+                    x={textPos[0]}
+                    y={textPos[1]}
+                    fontSize={20}
+                    stroke={"black"}
+                    strokeWidth={1.2}
+                    style={style}>{e.data.quantity}</text>
 
               <text dy=".35em"
                     x={labelPos[0]}

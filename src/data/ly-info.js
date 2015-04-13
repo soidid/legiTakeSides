@@ -697,7 +697,7 @@ module.exports = {
     "constituency_detail": ""
   },
   {
-    "name": "林佳龍",
+    "name": "黃國書",
     "party": "民主進步黨",
     "party_eng": "DPP",
     "caucus": "DPP",
@@ -748,7 +748,7 @@ module.exports = {
     "constituency_detail": "仁武區 鳥松區 大寮區 林園區"
   },
   {
-    "name": "林明溱",
+    "name": "莊瑞雄",
     "party": "中國國民黨",
     "party_eng": "KMT",
     "caucus": "KMT",
@@ -1078,7 +1078,7 @@ module.exports = {
     "constituency_detail": "全縣"
   },
   {
-    "name": "徐耀昌",
+    "name": "許淑華",
     "party": "中國國民黨",
     "party_eng": "KMT",
     "caucus": "KMT",
@@ -2300,7 +2300,7 @@ module.exports = {
     "constituency_detail": "全縣"
   },
   {
-    "name": "潘孟安",
+    "name": "徐志榮",
     "party": "民主進步黨",
     "party_eng": "DPP",
     "caucus": "DPP",
@@ -2501,7 +2501,7 @@ module.exports = {
     "constituency_detail": "全市"
   },
   {
-    "name": "魏明谷",
+    "name": "陳素月",
     "party": "民主進步黨",
     "party_eng": "DPP",
     "caucus": "DPP",

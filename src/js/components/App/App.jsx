@@ -282,14 +282,9 @@ var App = React.createClass({
           {pieChart}
           {groupItem}
   
-
-          
           <div>
-              <div className="App-title"></div>
               {legiItems}
           </div>
-
-
 
           <div>圖表說明：
                把，在<a className="App-link" href="https://docs.google.com/spreadsheets/d/1YJwYBacyYvjFIKZgS5cNr2IuXxUypcvvZndOJtydkm8/edit?usp=sharing"
