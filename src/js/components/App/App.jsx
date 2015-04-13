@@ -85,10 +85,12 @@ var App = React.createClass({
       /* ====== */
       //var data = [];
       if(legiData[0].position){// 表態資料取得
+
           var stateTemp = {};  // 以 object 形式做紀錄
+
           legiData.map((value, key)=>{
-              console.log(value.party+": ");// value.party 是中文
-              console.log(value.position);
+              // console.log(value.party+": ");// value.party 是中文
+              // console.log(value.position);
               
               /* --------- 立法院   --------- */
               if(!stateTemp["立法院"]){
@@ -213,7 +215,9 @@ var App = React.createClass({
   render () {
     var { data, currentIndex, width, height, legiData} = this.state;
     var classSet = React.addons.classSet;
-    var colorRange = ["#0b64a0", "#5098d8", "#80b2e0", "#afcfef", "#d4e6f9",  "#fcedd6", "#f7e3bf", "#fcce65", "#fec92d", "#f4b425"];
+    //var colorRange = ["#0b64a0", "#5098d8", "#80b2e0", "#afcfef", "#d4e6f9",  "#fcedd6", "#f7e3bf", "#fcce65", "#fec92d", "#f4b425"];
+    var colorRange = ["#5098d8","#EB5635", "#ccc"];
+
 
     var tooltip = {
         "hidden" : true,

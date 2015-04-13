@@ -4,6 +4,8 @@ var d3 = require("d3");
 var Chart = require('../Chart/Chart.jsx');
 var Tooltip = require('../Tooltip/Tooltip.jsx');
 
+
+var hightlightColor = "#fcce65";
 var PieChart = React.createClass({
 
  
@@ -54,7 +56,7 @@ var PieChart = React.createClass({
       rangeData.push(dataLength * i / colorLength);
     }
     return d3.scale.linear()
-    .domain(rangeData)
+      .domain(rangeData)
       .range(this.state.colorRange); 
   },
 
@@ -120,8 +122,9 @@ var PieChart = React.createClass({
                .selectAll("path")
                
                .style("fill", function(d, i) { 
-                  var c = _this._color().call(null, i);
-                  var fillC = ( currentHoverIndex === i) ? "rgb(135,184,37)" : c;
+                  //var c = _this._color().call(null, i);
+                  var c = this.fill;
+                  var fillC = ( currentHoverIndex === i) ? hightlightColor : c;
                   return fillC;
                 })
                //.transition().duration(1000)
@@ -213,15 +216,27 @@ var PieChart = React.createClass({
         var outerPoint = _outerArc().centroid.call(null, e);
         
         var boundChangeColor = this._onChangeColor.bind(null, {data: e.data, index: key});
-        var c = _color().call(null, key);
-        var fillC = (currentHoverIndex === key) ? "rgb(135,184,37)" : c;
+        
+        var c = _color().call(null, key);// 原本依照 index 的顏色
+        
+        var colorForPosition = "none";
+        
+        if(e.data.text === "支持"){
+            colorForPosition = "#5098d8";
+        }else if(e.data.text === "反對"){
+            colorForPosition = "#EB5635";
+        }else{
+            colorForPosition = "#ccc";
+        }
+
+        var fillC = (currentHoverIndex === key) ? hightlightColor : colorForPosition;
         
         return (
           <g className="arc"
              data={e.data}
              onMouseMove={handleMove}
              onMouseLeave={handleLeave}>
-              <path fill={fillC} 
+              <path fill={colorForPosition} 
                     d={d}
                     onMouseEnter={boundChangeColor}
                     onMouseLeave={this._onResetColor}/>
