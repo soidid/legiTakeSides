@@ -1287,7 +1287,7 @@ module.exports = {
   {
     "name": "陳雪生",
     "party": "無黨籍",
-    "party_eng": null,
+    "party_eng": "NP",
     "caucus": null,
     "constituency": [
       "LJF",
@@ -1483,7 +1483,7 @@ module.exports = {
   {
     "name": "高金素梅",
     "party": "無黨團結聯盟",
-    "party_eng": "NSU",
+    "party_eng": "NPU",
     "caucus": null,
     "constituency": [
       "aborigine",

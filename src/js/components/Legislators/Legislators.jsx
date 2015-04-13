@@ -21,8 +21,9 @@ var Legislators = React.createClass({
     .map((item, key)=>{
 
         var imgURL = require("./images/avatar/"+item.name+".png");
+        var partyClass = "Legislators-avatar is-"+item.party_eng;
         return (
-          <div className="Legislators-avatar"
+          <div className={partyClass}
                key={key}>
 
             <img className="Legislators-avatarImg"
@@ -42,8 +43,9 @@ var Legislators = React.createClass({
     .map((item, key)=>{
 
         var imgURL = require("./images/avatar/"+item.name+".png");
+        var partyClass = "Legislators-avatar is-"+item.party_eng;
         return (
-          <div className="Legislators-avatar"
+          <div className={partyClass}
                key={key}>
 
             <img className="Legislators-avatarImg"
@@ -62,8 +64,9 @@ var Legislators = React.createClass({
     .map((item, key)=>{
 
         var imgURL = require("./images/avatar/"+item.name+".png");
+        var partyClass = "Legislators-avatar is-"+item.party_eng;
         return (
-          <div className="Legislators-avatar"
+          <div className={partyClass}
                key={key}>
             <img className="Legislators-avatarImg"
                  src={imgURL} />
@@ -77,15 +80,15 @@ var Legislators = React.createClass({
       <div className="Legislators">
        
         <div className="Legislators-group">
-            <div>支持</div>
+            <div className="Legislators-groupTitle">支持</div>
             {legiItemsFor}
           </div>
         <div className="Legislators-group">
-            <div>未表態</div>
+            <div className="Legislators-groupTitle">未表態</div>
             {legiItemsPending}
         </div>
         <div className="Legislators-group">
-            <div>反對</div>
+            <div className="Legislators-groupTitle">反對</div>
             {legiItemsAgainst}
         </div>
       </div>

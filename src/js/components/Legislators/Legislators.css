@@ -1,9 +1,21 @@
 .Legislators {
 	display: flex;
-
+	flex-direction: column;
+}
+@media screen and (min-width: 500px){
+	.Legislators {
+		flex-direction: row;
+    }
 }
 .Legislators-group {
 	flex: 1;
+	margin: 10px;
+	padding: 10px 0px;
+	background: rgb(220,220,220);
+}
+.Legislators-groupTitle {
+	font-size: 20px;
+	font-weight: 800;
 }
 .Legislators-avatar {
 	display: inline-block;
@@ -11,6 +23,33 @@
 	margin: 4px;
 	font-size: 12px;
 }
+
+
+.Legislators-avatar.is-KMT {
+  border: 1px solid #3288bd;
+  border-bottom:4px solid #3288bd;
+}
+.Legislators-avatar.is-DPP {
+  border: 1px solid #7fbc41;
+  border-bottom:4px solid #7fbc41;
+}
+.Legislators-avatar.is-PFP {
+  border: 1px solid orange;
+  border-bottom:4px solid orange;
+}
+.Legislators-avatar.is-TSU {
+  border: 1px solid #b35806;
+  border-bottom:4px solid #b35806;
+}
+.Legislators-avatar.is-NP {
+  border: 1px solid gray;
+  border-bottom:4px solid gray;
+}
+.Legislators-avatar.is-NPU {
+  border: 1px solid rgba(194,15,81,0.9);
+  border-bottom:4px solid rgba(194,15,81,0.9);
+}
+
 .Legislators-avatarImg {
 	width: 40px;
 	height: 40px;

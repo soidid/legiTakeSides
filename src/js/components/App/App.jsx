@@ -278,7 +278,7 @@ var App = React.createClass({
           {pieChart}
           {groupItem}
   
-  
+
           
           <div>
               <div className="App-title"></div>
@@ -288,7 +288,7 @@ var App = React.createClass({
 
 
           <div>圖表說明：
-               把，在<a href="https://docs.google.com/spreadsheets/d/1YJwYBacyYvjFIKZgS5cNr2IuXxUypcvvZndOJtydkm8/edit?usp=sharing"
+               把，在<a className="App-link" href="https://docs.google.com/spreadsheets/d/1YJwYBacyYvjFIKZgS5cNr2IuXxUypcvvZndOJtydkm8/edit?usp=sharing"
                     target="_blank">google表單</a>填寫的立場資料，畫成圖表。
           </div>
 

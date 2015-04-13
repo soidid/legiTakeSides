@@ -30,4 +30,8 @@
 	font-weight: 700;
 	margin-top: 40px;
 }
+.App-link, .App-link:hover, .App-link:visited {
+	color: rgb(53,55,54);
+	margin: 0px 2px;
+}
 
