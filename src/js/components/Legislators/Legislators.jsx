@@ -10,11 +10,13 @@ var Legislators = React.createClass({
   render() {
 
     //var data = this.props.data;
+    var groupFilter = this.props.currentGroup;
+    //console.log(groupFilter);
    
     // 支持
     var legiItemsFor = this.props.data
     .filter((item)=>{
-        return item.position === '支持';
+        return (item.position === '支持') && (item.party === groupFilter || groupFilter === "立法院");
     })
     .map((item, key)=>{
 
@@ -35,7 +37,7 @@ var Legislators = React.createClass({
     //未表態
     var legiItemsPending = this.props.data
     .filter((item)=>{
-        return item.position === '未表態';
+        return (item.position === '未表態') && (item.party === groupFilter || groupFilter === "立法院");
     })
     .map((item, key)=>{
 
@@ -55,7 +57,7 @@ var Legislators = React.createClass({
     //反對
     var legiItemsAgainst = this.props.data
     .filter((item)=>{
-        return item.position === '反對';
+        return (item.position === '反對') && (item.party === groupFilter || groupFilter === "立法院");
     })
     .map((item, key)=>{
 
@@ -73,6 +75,7 @@ var Legislators = React.createClass({
     
     return (
       <div className="Legislators">
+       
         <div className="Legislators-group">
             <div>支持</div>
             {legiItemsFor}

@@ -96,7 +96,7 @@ var App = React.createClass({
               }
               if(!stateTemp["立法院"][value.position]){
                   stateTemp["立法院"][value.position] = 1;
-                  
+
               }else{
                   stateTemp["立法院"][value.position] += 1;
               }
@@ -240,12 +240,12 @@ var App = React.createClass({
     if(data){
         groupTitle = <div className="App-title">{data[currentIndex].group}怎麼說</div>;
         pieChart = <PieChart colorRange={colorRange} 
-                    data={data[currentIndex].data} 
-                    width={width}
-                    height={height}
-                    innerWidth={width-100} 
-                    innerHeight={height-30} 
-                    tooltip={tooltip} />;
+                             data={data[currentIndex].data} 
+                             width={width}
+                             height={height}
+                             innerWidth={width-100} 
+                             innerHeight={height-30} 
+                             tooltip={tooltip} />;
         groupItem = data.map((item, key)=>{
             var currentIndex = this.state.currentIndex;
             var boundClick = this._onSetIndex.bind(null,key);
@@ -260,6 +260,12 @@ var App = React.createClass({
             );
         });
     }
+
+    var legiItems = "";
+    if(data){
+        legiItems = <Legislators data={legiData}
+                     currentGroup={data[currentIndex].group}/>
+    }
     
     return (
       <div className="App"
@@ -271,16 +277,21 @@ var App = React.createClass({
           {groupTitle}
           {pieChart}
           {groupItem}
+  
+  
           
-<br/><br/><br/>
+          <div>
+              <div className="App-title"></div>
+              {legiItems}
+          </div>
+
+
+
           <div>圖表說明：
                把，在<a href="https://docs.google.com/spreadsheets/d/1YJwYBacyYvjFIKZgS5cNr2IuXxUypcvvZndOJtydkm8/edit?usp=sharing"
                     target="_blank">google表單</a>填寫的立場資料，畫成圖表。
           </div>
-          <div>
-            <div className="App-title"></div>
-            <Legislators data={legiData}/>
-          </div>
+
         </div>
       </div>
     );
